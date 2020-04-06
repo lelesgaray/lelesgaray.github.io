@@ -60,9 +60,6 @@ author:
   avatar : "/assets/images/leandro.jpg"
   bio    : "Economist & Data Science enthusiast"
   links:
-    - label: "Mail"
-      icon: "fab fa-fw fa-mail"
-      url: "leandroelesgaray@gmail.com"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/leandro-elesgaray/"
