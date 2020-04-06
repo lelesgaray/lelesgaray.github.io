@@ -60,9 +60,9 @@ author:
   avatar : "/assets/images/leandro.jpg"
   bio    : "Economist & Data Science enthusiast."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
+    - label: "Linkedin"
+      icon: "fas fa-fw fa-linkedin"
+      url: "http://https://www.linkedin.com/in/leandro-elesgaray/?locale=en_US"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/lelesgaray"
