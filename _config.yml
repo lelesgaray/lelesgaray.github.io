@@ -65,7 +65,7 @@ author:
       url: "leandroelesgaray@gmail.com"
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/leandro-elesgaray/?locale=en_US"
+      url: "https://linkedin.com/in/leandro-elesgaray/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/lelesgaray"
@@ -74,7 +74,7 @@ footer:
   links:
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/leandro-elesgaray/?locale=en_US"
+      url: "https://linkedin.com/in/leandro-elesgaray/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/lelesgaray""
