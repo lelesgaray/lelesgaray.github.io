@@ -2,7 +2,7 @@
 title: "Having fun with Spotipy!"
 date: 2020-07-10T15:34:30-04:00
 categories:
-  - blog
+  - Blog
 tags:
   - Music
   - EDA
