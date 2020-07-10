@@ -13,6 +13,8 @@ header:
   teaser: "/assets/images/spotify_pic.jpg"
 ---
 
+{% include figure image_path="/assets/images/spotify_pic.jpg" alt="Spotify API" caption="Spotify API" %}
+
 ## Analyzing my Spotify listening habits with Spotify API
 
 
