@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: how to create an easy bubble map with Plotly"
+title: "Tutorial: how to easily create a bubble map with Plotly"
 date: 2020-04-30T15:34:30-04:00
 categories:
   - Blog
