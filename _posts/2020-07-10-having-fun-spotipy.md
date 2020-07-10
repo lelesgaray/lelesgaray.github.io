@@ -5,11 +5,9 @@ categories:
   - Blog
 tags:
   - Music
+  - API
   - EDA
-toc: true
-toc_label: "Table of Contents"
-toc_icon: "cog"
-toc_sticky: true
+classes: wide
 header: 
   teaser: "/assets/images/spotify_pic.jpg"
 ---
