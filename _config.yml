@@ -59,7 +59,7 @@ author:
   name   : "Leandro Elesgaray"
   avatar : "/assets/images/leandro.jpg"
   bio    : "Economist & Data Science enthusiast <br> <br>
-            <strong>leandroelesgaray@gmail.com </strong>"
+            <i>leandroelesgaray@gmail.com </i>"
   links:
     - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
