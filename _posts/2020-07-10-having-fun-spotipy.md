@@ -34,7 +34,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from spotipy import util
 ```
-Next we need to authentificate our user and credentials. To do this, we first create an application in the [https://developer.spotify.com/dashboard/](Spotify Dashboard) and gather the credentials. Then it's easy to initialize and authorize the client:
+Next we need to authentificate our user and credentials. To do this, we first create an application in the [Spotify Dashboard](https://developer.spotify.com/dashboard/) and gather the credentials. Then it's easy to initialize and authorize the client:
 
 ```python
 token = util.prompt_for_user_token(username = user,
