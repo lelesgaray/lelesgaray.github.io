@@ -6,6 +6,9 @@ categories:
 tags:
   - Music
   - EDA
+toc: true
+toc_label: "Table of Contents"
+toc_icon: "cog"
 ---
 
 ## Analyzing my Spotify listening habits with Spotify API
