@@ -9,6 +9,8 @@ tags:
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
+header: 
+  teaser: "/assets/images/spotify_pic.jpg"
 ---
 
 # Analyzing my Spotify listening habits with Spotify API
