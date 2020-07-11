@@ -2,15 +2,16 @@
 title: "Tutorial: how to easily create a bubble map with Plotly"
 date: 2020-04-30T15:34:30-04:00
 categories:
-  - Blog
+  - Tutorial
 tags:
   - Plotly
   - EDA
   - Covid
+  - Python
 classes: wide
 ---
 
-Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the <a href=coronavirus.jhu.edu/data>plots we are seeing these days</a>.  
+Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the [plots we are seeing these days.](https://coronavirus.jhu.edu/)
 
 ## Data import and libraries
 
@@ -248,10 +249,10 @@ And voilá!
         </div>
 
 Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe
-``` pyhton
+
+```pyhton
+
 fig = go.Figure()
-
-
 fig.add_trace(go.Scattergeo(
         locationmode = 'country names',
         lon = df_plot['Longitude'],
@@ -265,8 +266,6 @@ fig.add_trace(go.Scattergeo(
             line_width=0.5,
             sizemode = 'area' )))
        
-
-
 fig.update_layout(
         showlegend = False,
         mapbox_style="open-street-map",
