@@ -249,7 +249,7 @@ And voilà!
             </script>
         </div>
 
-Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe.:earth_americas:
+Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time as a 3D globe.:earth_americas:
 
 ``` python
 fig = go.Figure()
