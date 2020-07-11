@@ -10,7 +10,7 @@ tags:
 classes: wide
 ---
 
-Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the [usual plots we are seeing these days] (coronavirus.jhu.edu/data).
+Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the <a href=coronavirus.jhu.edu/data>plots we are seeing these days</a>.  
 
 ## Data import and libraries
 
@@ -225,7 +225,9 @@ fig.show()
 ```
 And voilá!
  <div>
-        
+
+
+
                 <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
             <div id="6046d766-c20d-4db1-ace7-18b6a671d787" class="plotly-graph-div" style="height:500px; width:800px;"></div>
@@ -245,6 +247,51 @@ And voilá!
             </script>
         </div>
 
+Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe
+``` pyhton
+fig = go.Figure()
+
+
+fig.add_trace(go.Scattergeo(
+        locationmode = 'country names',
+        lon = df_plot['Longitude'],
+        lat = df_plot['Latitude'],
+        text = df_plot['text'],
+        mode = 'markers',
+        marker = dict(
+            size = df_plot['total_cases']/scale,
+            color = "#981E32",
+            line_color='rgb(200,200,200)',
+            line_width=0.5,
+            sizemode = 'area' )))
+       
+
+
+fig.update_layout(
+        showlegend = False,
+        mapbox_style="open-street-map",
+          width=800,
+    height=500,
+    margin=dict(
+        l=20,
+        r=20,
+        b=20,
+        t=0,
+        pad=4),
+        geo = dict(
+            scope = 'world',
+            landcolor = '#fffdd0',
+            showland= True,
+            showocean=True,
+            oceancolor="LightBlue",
+            showcountries=True
+        )
+    )
+
+fig.update_geos(projection_type="orthographic")
+
+fig.show()
+```
 
 <div>
         
