@@ -14,7 +14,7 @@ Creating engaging plots is one useful skill to present data from your work. In t
 
 ## Data import and libraries
 
-We will start by importing the usual libraries for data wrangling and the Plotly libraries we will use
+We will start by importing the usual libraries for data wrangling and the Plotly libraries we will use.
 
 ``` python
 import numpy as np
@@ -174,10 +174,41 @@ df.head()
 </div>
 </div>
 
-</div>
+## Grouping info and plot
 
-</div>
-</div>
+Before jumping into the plot details, let's group the data by country and keep only the relevant features (*recall from the table before that we have data by date*). 
+```python
+df_plot = df_plot[['total_cases', 'Country', 'Latitude', 'Longitude','total_deaths_per_million' ]]\
+          .groupby(df_plot['Country']).mean().reset_index()
+```
+Now we have all set up to start the map plot. To make it easier, we will divide it into 4 parts
+
+### Marker text and color
+In this section we will define the marker text to show and variables. As you can see below we will select `Total Cases` and `Total deaths per million`. The `scale` variable will help us adjust the size of the bubble.
+```python
+df_plot['text'] = df_plot['Country'] + '<br>Cases: ' + (df_plot['total_cases'].astype('int')).astype(str) + '<br>Total Deaths per million: ' + (df_plot['total_deaths_per_million'].astype('int')).astype(str) 
+colors = "#981E32"
+scale = 200
+```
+### Figure instantiation and definition
+In this section we will define a `ScatterGeo()` figure, that will allow us to render a full map.
+```python
+fig = go.Figure()
+
+fig.add_trace(go.Scattergeo(
+        locationmode = 'country names',
+        lon = df_plot['Longitude'],
+        lat = df_plot['Latitude'],
+        text = df_plot['text'],  <--- the text for the market that we already defined
+        mode = 'markers',
+        marker = dict(
+            size = df_plot['total_cases']/scale, <-- size of the bubble (normalized by scale)
+            color = colors, <--- color of the bubble
+            line_color='rgb(200,200,200)', <--- color for the bubble line
+            line_width=0.5,
+            sizemode = 'area' )))
+```
+
 
 
 <div>
