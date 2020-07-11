@@ -242,7 +242,10 @@ plt.xticks(np.arange(0, 10, step=1));
 ```python
 sns.distplot(df['track_duration']);
 ```
-{% include figure image_path="assets/images/top_tracks_hist.png" alt="this is a placeholder image" caption="" %}
+.width-half {
+    width: 50%
+}
+![](assets/images/top_tracks_hist.png){: .width-half}
 ```python
 # Average and median length of songs
 avg_duration_sec = round(np.mean(df['track_duration'] / 1000), 2)
