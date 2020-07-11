@@ -7,6 +7,7 @@ tags:
   - Music
   - API
   - EDA
+  - Python
 classes: wide
 header: 
   teaser: "/assets/images/spotify_pic.jpg"
