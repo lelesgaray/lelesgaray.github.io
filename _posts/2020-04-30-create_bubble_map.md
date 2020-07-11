@@ -184,7 +184,7 @@ df_plot = df[['total_cases', 'Country', 'Latitude', 'Longitude','total_deaths_pe
 ```
 Now we have all set up to start the map plot. To make it easier, we will divide it into 4 parts
 
-### 1.Marker text and color
+#### 1.Marker text and color
 In this section we define the marker text to show and variables. As you can see below we will select `Total Cases` and `Total deaths per million`. The `scale` variable will help us adjust the size of the bubble.
 ```python
 df_plot['text'] = df_plot['Country'] + '<br>Cases: ' + (df_plot['total_cases'].astype('int')).astype(str)\
@@ -192,7 +192,7 @@ df_plot['text'] = df_plot['Country'] + '<br>Cases: ' + (df_plot['total_cases'].a
 colors = "#981E32"
 scale = 200
 ```
-### 2.Figure instantiation and definition
+#### 2.Figure instantiation and definition
 In this section we define a `ScatterGeo()` figure, that will allow us to render a full map.
 ```python
 fig = go.Figure()
@@ -210,7 +210,7 @@ fig.add_trace(go.Scattergeo(
             line_width=0.5,
             sizemode = 'area' )))
 ```
-### 3.Layout configuration
+#### 3.Layout configuration
 Last, we define the base map.
 ```python
 fig.update_layout(
