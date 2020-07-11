@@ -327,7 +327,7 @@ with open('plotly_graph.html', 'w') as f:
 I hope this tutorial come in handy to start improving your plots and presentations of your projects. And also to keep your mind busy while we wait for a vaccine to arrive :syringe:
 
 ## Extras
-- [Repo])https://github.com/lelesgaray/covid-analysis) of the project with more plots and analysis of data.
+- [Repo](https://github.com/lelesgaray/covid-analysis) of the project with more plots and analysis of data.
 - 2 great videos by [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) on epidemics and exponential growth.
 {% include video id="Kas0tIxDvrg" provider="youtube" %}
 <br>
