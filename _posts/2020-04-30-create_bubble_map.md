@@ -10,7 +10,7 @@ tags:
 classes: wide
 ---
 
-Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the [usual plots we are seeing these days] (https://coronavirus.jhu.edu/map.html).
+Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the [usual plots we are seeing these days] (https://coronavirus.jhu.edu/).
 
 ## Data import and libraries
 
@@ -199,12 +199,12 @@ fig.add_trace(go.Scattergeo(
         locationmode = 'country names',
         lon = df_plot['Longitude'],
         lat = df_plot['Latitude'],
-        text = df_plot['text'],  <--- the text for the market that we already defined
+        text = df_plot['text'],  #<--- the text for the market that we already defined
         mode = 'markers',
         marker = dict(
-            size = df_plot['total_cases']/scale, <-- size of the bubble (normalized by scale)
+            size = df_plot['total_cases']/scale, #<-- size of the bubble (normalized by scale)
             color = colors, <--- color of the bubble
-            line_color='rgb(200,200,200)', <--- color for the bubble line
+            line_color='rgb(200,200,200)', #<--- color for the bubble line
             line_width=0.5,
             sizemode = 'area' )))
 ```
