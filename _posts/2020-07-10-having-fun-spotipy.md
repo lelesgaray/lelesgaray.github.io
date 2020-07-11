@@ -242,7 +242,7 @@ plt.xticks(np.arange(0, 10, step=1));
 ```python
 sns.distplot(df['track_duration']);
 ```
-
+{% include figure image_path="assets/images/top_tracks_hist.png" alt="this is a placeholder image" caption="" %}
 ```python
 # Average and median length of songs
 avg_duration_sec = round(np.mean(df['track_duration'] / 1000), 2)
@@ -253,7 +253,17 @@ median_duration_min = round(median_duration_sec / 60, 2)
 print('The average length of top tracks is ' + str(avg_duration_sec) + ' seconds -- ' + str(avg_duration_min) + ' minutes') 
 print('The median length of top tracks is ' + str(median_duration_sec) + ' seconds -- ' + str(median_duration_min) + ' minutes') 
 ```
+<div class="output_area">
 
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The average length of top tracks is 232.29 seconds -- 3.87 minutes
+The median length of top tracks is 236.25 seconds -- 3.94 minutes
+</pre>
+</div>
+</div>
 
 ## Extras
 
