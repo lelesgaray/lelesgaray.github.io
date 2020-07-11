@@ -42,9 +42,46 @@ token = util.prompt_for_user_token(username = user,
                                    redirect_uri= 'http://localhost/')
 
 spotify = spotipy.Spotify(auth=token)
+spotify.trace = True
+spotify.trace_out = True
 ```
 **Tip**: In case you are struggling to get the `user`, `client_id` and `client_secret`, I recommend this [video](https://www.youtube.com/watch?v=yxSKrVXeKcI) and this [tutorial](https://support.appreciationengine.com/article/oaNki9g06n-creating-a-spotify-application) to help you configure your app.
 {: .notice}
+
+## Top tracks
+
+The spotify object has several ways to access JSON for artists, songs and songs features. Let's start by retrieving my `top tracks`. One way to do it is to define a for loop to parse the data into a tidy dataframe.
+```python
+top_tracks = spotify.current_user_top_tracks(limit=1000, time_range="long_term") #<-- method to get top tracks 
+cnt = 1
+fields = ['rank_position', 'album_type', 'album_name', 'album_id',
+              'artist_name', 'artist_id', 'track_duration', 'track_id', 
+              'track_name', 'track_popularity', 'track_number', 'track_type']
+    
+tracks = {}
+
+for i in fields:
+        tracks[i] = []
+    
+for i in top_tracks['items']:
+    
+    #tracks['rank_position'].append(cnt)
+    tracks['album_type'].append(i['album']['album_type'])
+    tracks['album_id'].append(i['album']['id'])
+    tracks['album_name'].append(i['album']['name'])
+    tracks['artist_name'].append(i['artists'][0]['name'])
+    tracks['artist_id'].append(i['artists'][0]['id'])
+    tracks['track_duration'].append(i['duration_ms'])
+    tracks['track_id'].append(i['id'])
+    tracks['track_name'].append(i['name'])
+    tracks['track_popularity'].append(i['popularity'])
+    tracks['track_number'].append(i['track_number'])
+    tracks['track_type'].append(i['type'])
+    cnt += 1
+    
+df = pd.DataFrame(dict([ (k,pd.Series(v)) for k,v in tracks.items() ]))
+df
+```
 
 <div>
 <style scoped>
@@ -188,6 +225,35 @@ spotify = spotipy.Spotify(auth=token)
   </tbody>
 </table>
 </div>
+
+Now that we have tidy data, let's analize the number of songs by artist
+
+```python
+artists = pd.DataFrame(df.groupby('artist_name')['track_name'].count().sort_values(ascending = False).reset_index())
+sns.catplot(x = 'track_name', y = 'artist_name', data = artists, kind = 'bar', height = 7, aspect = 1 );
+plt.title("# of Top songs by artist")
+plt.xlabel('# of songs')
+plt.ylabel('Artist Name')
+plt.xticks(np.arange(0, 10, step=1));
+```
+{% include figure image_path="assets/images/top_tracks_bar.png" alt="this is a placeholder image" caption="" %}
+
+#### What's the average length of the songs I listen to?
+```python
+sns.distplot(df['track_duration']);
+```
+
+```python
+# Average and median length of songs
+avg_duration_sec = round(np.mean(df['track_duration'] / 1000), 2)
+avg_duration_min = round(avg_duration_sec / 60, 2)
+median_duration_sec = round(np.median(df['track_duration'] / 1000), 2)
+median_duration_min = round(median_duration_sec / 60, 2)
+
+print('The average length of top tracks is ' + str(avg_duration_sec) + ' seconds -- ' + str(avg_duration_min) + ' minutes') 
+print('The median length of top tracks is ' + str(median_duration_sec) + ' seconds -- ' + str(median_duration_min) + ' minutes') 
+```
+
 
 ## Extras
 
