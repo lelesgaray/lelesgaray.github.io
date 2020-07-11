@@ -326,7 +326,7 @@ with open('plotly_graph.html', 'w') as f:
 ## Concluding remarks
 I hope this tutorial come in handy to start improving your plots and presentations of your projects. And also to keep your mind busy while we wait for a vaccine to arrive :syringe:
 
-##Extras
+## Extras
 - 2 great videos by [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) on epidemics and exponential growth.
 {% include video id="Kas0tIxDvrg" provider="youtube" %}
 <br>
