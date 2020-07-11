@@ -292,16 +292,6 @@ fig.update_geos(projection_type="orthographic")
 fig.show()
 ```
 
-**Tip**: if you want to embed the map, follow theses steps
-- Export the html to your local drive
-```python
-with open('plotly_graph.html', 'w') as f:
-    f.write(fig.to_html(include_plotlyjs='cdn'))
-```
-- Open the file as a .txt and copy the <div> section
-- Paste it in the code
-{: .notice--success}
-
 <div>
         
                 <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
@@ -322,5 +312,24 @@ with open('plotly_graph.html', 'w') as f:
                 
             </script>
         </div>
-        
-:syringe:
+
+**Tip**: if you want to embed the map, follow theses steps:
+{: .notice--success}
+- Export the html to your local drive
+```python
+with open('plotly_graph.html', 'w') as f:
+    f.write(fig.to_html(include_plotlyjs='cdn'))
+```
+- Open the file as a .txt and copy the <div> section
+- Paste it in the code
+
+## Concluding remarks
+I hope this tutorial come in handy to start improving your plots and presentations of your projects. And also to keep your mind busy while we wait for a vaccine to arrive :syringe:
+
+##Extras
+- 2 great videos by [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) on epidemics and exponential growth.
+{% include video id="Kas0tIxDvrg" provider="youtube" %}
+<br>
+{% include video id="gxAaO2rsdIs" provider="youtube" %}
+
+
