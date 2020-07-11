@@ -248,10 +248,9 @@ And voilá!
             </script>
         </div>
 
-Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe
+Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe.
 
 ```pyhton
-
 fig = go.Figure()
 fig.add_trace(go.Scattergeo(
         locationmode = 'country names',
@@ -291,6 +290,16 @@ fig.update_geos(projection_type="orthographic")
 
 fig.show()
 ```
+**Tip**: if you want to embed the map, follow theses steps
+{: .notice}
+- Export the html to your local drive
+```python
+with open('plotly_graph.html', 'w') as f:
+    f.write(fig.to_html(include_plotlyjs='cdn'))
+```
+- Open the file as a .txt and copy the <div> section
+- Paste it in the code
+
 
 <div>
         
