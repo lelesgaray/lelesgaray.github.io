@@ -9,6 +9,201 @@ tags:
   - Covid
 classes: wide
 ---
+
+Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the [usual plots we are seeing these days] (https://coronavirus.jhu.edu/map.html).
+
+## Data import and libraries
+
+We will start by importing the usual libraries for data wrangling and the Plotly libraries we will use
+
+``` python
+import numpy as np
+import pandas as pd
+# plotly libraries
+#pip install plotly <-- in case you need to intall plotly
+import plotly.offline as py 
+import plotly.graph_objs as go # it's like "plt" of matplot
+import plotly.tools as tl
+```
+Next we will load a DataFrame that contains tidy information about cases, tests and deaths for several countries around the world.
+
+``` python
+df = pd.read_csv('https://raw.githubusercontent.com/nikkisharma536/streamlit_app/master/covid.csv')
+df.head()
+```
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/nikkisharma536/streamlit_app/master/covid.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>date</th>
+      <th>total_cases</th>
+      <th>new_cases</th>
+      <th>total_deaths</th>
+      <th>new_deaths</th>
+      <th>total_cases_per_million</th>
+      <th>new_cases_per_million</th>
+      <th>total_deaths_per_million</th>
+      <th>new_deaths_per_million</th>
+      <th>total_tests</th>
+      <th>new_tests</th>
+      <th>total_tests_per_thousand</th>
+      <th>new_tests_per_thousand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Argentina</td>
+      <td>-34.0</td>
+      <td>-64.0</td>
+      <td>9/4/2020</td>
+      <td>1795</td>
+      <td>80</td>
+      <td>65</td>
+      <td>5</td>
+      <td>39.716</td>
+      <td>1.770</td>
+      <td>1.438</td>
+      <td>0.111</td>
+      <td>14850</td>
+      <td>1520</td>
+      <td>0.329</td>
+      <td>0.034</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Argentina</td>
+      <td>-34.0</td>
+      <td>-64.0</td>
+      <td>10/4/2020</td>
+      <td>1894</td>
+      <td>99</td>
+      <td>79</td>
+      <td>14</td>
+      <td>41.907</td>
+      <td>2.190</td>
+      <td>1.748</td>
+      <td>0.310</td>
+      <td>16379</td>
+      <td>1529</td>
+      <td>0.362</td>
+      <td>0.034</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Argentina</td>
+      <td>-34.0</td>
+      <td>-64.0</td>
+      <td>11/4/2020</td>
+      <td>1975</td>
+      <td>81</td>
+      <td>82</td>
+      <td>3</td>
+      <td>43.699</td>
+      <td>1.792</td>
+      <td>1.814</td>
+      <td>0.066</td>
+      <td>18027</td>
+      <td>1648</td>
+      <td>0.399</td>
+      <td>0.036</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Argentina</td>
+      <td>-34.0</td>
+      <td>-64.0</td>
+      <td>14/4/2020</td>
+      <td>2272</td>
+      <td>69</td>
+      <td>98</td>
+      <td>3</td>
+      <td>50.270</td>
+      <td>1.527</td>
+      <td>2.168</td>
+      <td>0.066</td>
+      <td>22805</td>
+      <td>3047</td>
+      <td>0.505</td>
+      <td>0.067</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Argentina</td>
+      <td>-34.0</td>
+      <td>-64.0</td>
+      <td>15/4/2020</td>
+      <td>2432</td>
+      <td>160</td>
+      <td>105</td>
+      <td>7</td>
+      <td>53.810</td>
+      <td>3.540</td>
+      <td>2.323</td>
+      <td>0.155</td>
+      <td>24374</td>
+      <td>1569</td>
+      <td>0.539</td>
+      <td>0.035</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+
 <div>
         
                 <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
