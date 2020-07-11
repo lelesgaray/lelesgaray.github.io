@@ -15,7 +15,7 @@ Creating engaging plots is one useful skill to present data from your work. In t
 
 ## Data import and libraries
 
-We will start by importing the usual libraries for data wrangling and the Plotly libraries we will use.
+We start by importing the usual libraries for data wrangling and the Plotly libraries we will use.
 
 ``` python
 import numpy as np
@@ -26,7 +26,7 @@ import plotly.offline as py
 import plotly.graph_objs as go # it's like "plt" of matplot
 import plotly.tools as tl
 ```
-Next we will load a DataFrame that contains tidy information about cases, tests and deaths for several countries around the world.
+Next we load a DataFrame that contains tidy information about cases, tests and deaths for several countries around the world.
 
 ``` python
 df = pd.read_csv('https://raw.githubusercontent.com/nikkisharma536/streamlit_app/master/covid.csv')
@@ -184,16 +184,16 @@ df_plot = df[['total_cases', 'Country', 'Latitude', 'Longitude','total_deaths_pe
 ```
 Now we have all set up to start the map plot. To make it easier, we will divide it into 4 parts
 
-### Marker text and color
-In this section we will define the marker text to show and variables. As you can see below we will select `Total Cases` and `Total deaths per million`. The `scale` variable will help us adjust the size of the bubble.
+### 1.Marker text and color
+In this section we define the marker text to show and variables. As you can see below we will select `Total Cases` and `Total deaths per million`. The `scale` variable will help us adjust the size of the bubble.
 ```python
 df_plot['text'] = df_plot['Country'] + '<br>Cases: ' + (df_plot['total_cases'].astype('int')).astype(str)\
 + '<br>Total Deaths per million: ' + (df_plot['total_deaths_per_million'].astype('int')).astype(str) 
 colors = "#981E32"
 scale = 200
 ```
-### Figure instantiation and definition
-In this section we will define a `ScatterGeo()` figure, that will allow us to render a full map.
+### 2.Figure instantiation and definition
+In this section we define a `ScatterGeo()` figure, that will allow us to render a full map.
 ```python
 fig = go.Figure()
 
@@ -210,8 +210,8 @@ fig.add_trace(go.Scattergeo(
             line_width=0.5,
             sizemode = 'area' )))
 ```
-### Layout configuration
-Last, we will define the base map.
+### 3.Layout configuration
+Last, we define the base map.
 ```python
 fig.update_layout(
         showlegend = False,
