@@ -224,7 +224,7 @@ fig.update_layout(
 
 fig.show()
 ```
-And voilá!
+And voilà!
 
  <div>
 
