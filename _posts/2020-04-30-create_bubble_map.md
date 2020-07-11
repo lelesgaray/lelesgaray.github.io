@@ -249,7 +249,7 @@ And voilà!
             </script>
         </div>
 
-Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe.
+Plotly allows a full range of different modes and configuration, and you can experiment with the [full list of parameters](https://plotly.com/python-api-reference/generated/plotly.graph_objects.Figure.html) to get better results for your project. The idea behind this post was to get you working on a simple map and build up from there. Having said that, I will present you with the same map as before, but this time rendered in a 3D globe.:earth_americas:
 
 ``` python
 fig = go.Figure()
@@ -327,6 +327,7 @@ with open('plotly_graph.html', 'w') as f:
 I hope this tutorial come in handy to start improving your plots and presentations of your projects. And also to keep your mind busy while we wait for a vaccine to arrive :syringe:
 
 ## Extras
+- [Repo])https://github.com/lelesgaray/covid-analysis) of the project with more plots and analysis of data.
 - 2 great videos by [3blue1brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw) on epidemics and exponential growth.
 {% include video id="Kas0tIxDvrg" provider="youtube" %}
 <br>
