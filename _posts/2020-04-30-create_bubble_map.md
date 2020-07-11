@@ -32,13 +32,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/nikkisharma536/streamlit_app
 df.head()
 ```
 
-<div class="output_wrapper">
-<div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[1]:</div>
 
 
 
@@ -185,9 +179,6 @@ df.head()
 </div>
 </div>
 
-</div>
-    </div>
-  </div>
 
 <div>
         
