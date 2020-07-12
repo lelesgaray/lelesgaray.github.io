@@ -603,14 +603,6 @@ With the method `.current_user_top_artists()` you can retrieve your top artists 
       <td>1193825</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>Miranda!</td>
-      <td>[electronica argentina, latin, latin alternati...</td>
-      <td>69</td>
-      <td>https://i.scdn.co/image/3a8086ca147fabf9788a7d...</td>
-      <td>531054</td>
-    </tr>
-    <tr>
       <th>0</th>
       <td>Wilco</td>
       <td>[alternative country, alternative rock, chicag...</td>
@@ -688,6 +680,46 @@ for track in results['tracks'][:10]:
     print('cover art: ' + track['album']['images'][0]['url'])
     print()
 ```
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>track    : Under the Sun
+audio    : https://p.scdn.co/mp3-preview/168b3cbe7b1e7224ca297b757b6c9b35fb176629?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Doused
+audio    : https://p.scdn.co/mp3-preview/204c017dbfb537a03ea1ce0146b419d6cd40fa10?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2737bc6a0c2b8d9393a2dd80cb7
+
+track    : Blankenship
+audio    : https://p.scdn.co/mp3-preview/93ae971865b312f14d5b46b85fc75074d0daa1f3?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
+
+track    : Bent (Roi&#39;s Song)
+audio    : https://p.scdn.co/mp3-preview/8ea887c34718366fc52a240e413296c977c137e8?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Out of Mind
+audio    : https://p.scdn.co/mp3-preview/ea0bc6d9faa45b80f401d102c68c6ea842d7fc4c?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Skin Game
+audio    : https://p.scdn.co/mp3-preview/8440f0a173f55eac58895d63af59926f287be532?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
 
 
 ## Extras
