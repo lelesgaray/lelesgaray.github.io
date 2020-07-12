@@ -721,6 +721,8 @@ cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
 </div>
 </div>
 
+**Tip:** If you want to improve your analysis it's better to [Download your privacy data from Spotify](https://www.makeuseof.com/tag/download-privacy-data-spotify/). It's an easy process but it takes a few days to complete. Once it's done, they will send you an alert to your email with the [instructions to analyze the data.](https://support.spotify.com/uk/account_payment_help/privacy/understanding-my-data/)
+{: .notice--success}
 
 ## Extras
 
