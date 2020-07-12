@@ -513,6 +513,223 @@ Let's go ahead and plot `danceability` of the artists with more than 1 song in t
                 
             </script>
         </div>
+Turns out I'm not that bad... I was expecting a much darker outcome :satisfied:
+
+## Top Artists
+
+With the method `.current_user_top_artists()` you can retrieve your top artists and some info about them. Applying the same methods than before we get the following df:
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>artist_name</th>
+      <th>genres</th>
+      <th>popularity</th>
+      <th>artist_image</th>
+      <th>followers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>14</th>
+      <td>The Beatles</td>
+      <td>[beatlesque, british invasion, classic rock, m...</td>
+      <td>90</td>
+      <td>https://i.scdn.co/image/1047bf172446f2a815a99a...</td>
+      <td>16626426</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Frank Ocean</td>
+      <td>[alternative r&amp;b, hip hop, lgbtq+ hip hop, neo...</td>
+      <td>87</td>
+      <td>https://i.scdn.co/image/0cc22250c0b18183e5c62f...</td>
+      <td>5930758</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Daft Punk</td>
+      <td>[electro, filter house]</td>
+      <td>83</td>
+      <td>https://i.scdn.co/image/8e189c820ba32ffd332393...</td>
+      <td>6266549</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>U2</td>
+      <td>[irish rock, permanent wave, rock]</td>
+      <td>83</td>
+      <td>https://i.scdn.co/image/40d6c5c14355cfc127b70d...</td>
+      <td>6949831</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Cigarettes After Sex</td>
+      <td>[ambient pop, dream pop, el paso indie, shoegaze]</td>
+      <td>76</td>
+      <td>https://i.scdn.co/image/d34e8cb22455b5d6f49fde...</td>
+      <td>1570803</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Pixies</td>
+      <td>[alternative rock, art rock, boston rock, mode...</td>
+      <td>72</td>
+      <td>https://i.scdn.co/image/f3ed963d1578a0aff0be16...</td>
+      <td>1567607</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>The National</td>
+      <td>[indie rock, modern rock]</td>
+      <td>71</td>
+      <td>https://i.scdn.co/image/ffaca820e2ea78e2c2cd01...</td>
+      <td>1193825</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Miranda!</td>
+      <td>[electronica argentina, latin, latin alternati...</td>
+      <td>69</td>
+      <td>https://i.scdn.co/image/3a8086ca147fabf9788a7d...</td>
+      <td>531054</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Wilco</td>
+      <td>[alternative country, alternative rock, chicag...</td>
+      <td>66</td>
+      <td>https://i.scdn.co/image/cdf5e817af10c070b8995f...</td>
+      <td>533115</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Tycho</td>
+      <td>[chillwave, downtempo, electronica, indietroni...</td>
+      <td>66</td>
+      <td>https://i.scdn.co/image/80ba51f8c16442d839a0ed...</td>
+      <td>563780</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Patti Smith</td>
+      <td>[art pop, art punk, art rock, dance rock, folk...</td>
+      <td>64</td>
+      <td>https://i.scdn.co/image/44012cfc4fedcbe92ac5e1...</td>
+      <td>621566</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Alexandre Tharaud</td>
+      <td>[classical performance, classical piano]</td>
+      <td>62</td>
+      <td>https://i.scdn.co/image/c5e94f9df82bd5fdf9a978...</td>
+      <td>18637</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Bobby Womack</td>
+      <td>[classic soul, funk, motown, quiet storm, soul...</td>
+      <td>61</td>
+      <td>https://i.scdn.co/image/2a844501416646506eef4a...</td>
+      <td>445212</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>The Jesus and Mary Chain</td>
+      <td>[alternative rock, art rock, dance rock, new w...</td>
+      <td>58</td>
+      <td>https://i.scdn.co/image/7134f3041e86bb30a1aa8f...</td>
+      <td>286478</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>John Cale</td>
+      <td>[alternative rock, anti-folk, art pop, art roc...</td>
+      <td>55</td>
+      <td>https://i.scdn.co/image/ab6772690000dd221d8c27...</td>
+      <td>111959</td>
+    </tr>
+    <tr>
+      </tbody>
+</table>
+</div>
+</div>
+
+## Get top tracks from an artist
+
+I wanna finish this post with a way of getting top tracks from any artist you want. You only need the spotify `uri` that identifies each artist.
+```python
+# Diiv Example
+lz_uri = 'spotify:artist:4OrizGCKhOrW6iDDJHN9xd'
+
+spotify = spotipy.Spotify(client_credentials_manager=credentials)
+results = spotify.artist_top_tracks(lz_uri)
+
+for track in results['tracks'][:10]:
+    print('track    : ' + track['name'])
+    print('audio    : ' + track['preview_url'])
+    print('cover art: ' + track['album']['images'][0]['url'])
+    print()
+```
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>track    : Under the Sun
+audio    : https://p.scdn.co/mp3-preview/168b3cbe7b1e7224ca297b757b6c9b35fb176629?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Doused
+audio    : https://p.scdn.co/mp3-preview/204c017dbfb537a03ea1ce0146b419d6cd40fa10?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2737bc6a0c2b8d9393a2dd80cb7
+
+track    : Blankenship
+audio    : https://p.scdn.co/mp3-preview/93ae971865b312f14d5b46b85fc75074d0daa1f3?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
+
+track    : Bent (Roi&#39;s Song)
+audio    : https://p.scdn.co/mp3-preview/8ea887c34718366fc52a240e413296c977c137e8?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Out of Mind
+audio    : https://p.scdn.co/mp3-preview/ea0bc6d9faa45b80f401d102c68c6ea842d7fc4c?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Skin Game
+audio    : https://p.scdn.co/mp3-preview/8440f0a173f55eac58895d63af59926f287be532?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
+
+track    : Healthy Moon
+audio    : https://p.scdn.co/mp3-preview/7f94fe622dfc9905ec7fcb484d7146d6d7e1b855?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Dopamine
+audio    : https://p.scdn.co/mp3-preview/51199b8280a45cfa8bb4187573bc1ed9b3f68696?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : Valentine
+audio    : https://p.scdn.co/mp3-preview/50402e3f9ddbbecc2b11712ab87e6520de324723?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
+
+track    : How Long Have You Known
+audio    : https://p.scdn.co/mp3-preview/2c83a115b812651b196d275f949380cd922ced21?cid=ff47cd5371a049cb87c5c6bc407f4901
+cover art: https://i.scdn.co/image/ab67616d0000b2737bc6a0c2b8d9393a2dd80cb7
+
+</pre>
+</div>
 
 ## Extras
 
