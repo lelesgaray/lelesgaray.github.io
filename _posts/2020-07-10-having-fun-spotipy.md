@@ -490,10 +490,6 @@ songs_and_features
 </div>
 </div>
 
-</div>
-
-</div>
-</div>
 
 Let's go ahead and plot `danceability` of the songs.
 
