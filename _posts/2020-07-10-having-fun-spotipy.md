@@ -674,6 +674,7 @@ With the method `.current_user_top_artists()` you can retrieve your top artists 
 ## Get top tracks from an artist
 
 I wanna finish this post with a way of getting top tracks from any artist you want. You only need the spotify `uri` that identifies each artist.
+
 ```python
 # Diiv Example
 lz_uri = 'spotify:artist:4OrizGCKhOrW6iDDJHN9xd'
@@ -687,49 +688,7 @@ for track in results['tracks'][:10]:
     print('cover art: ' + track['album']['images'][0]['url'])
     print()
 ```
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>track    : Under the Sun
-audio    : https://p.scdn.co/mp3-preview/168b3cbe7b1e7224ca297b757b6c9b35fb176629?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
 
-track    : Doused
-audio    : https://p.scdn.co/mp3-preview/204c017dbfb537a03ea1ce0146b419d6cd40fa10?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2737bc6a0c2b8d9393a2dd80cb7
-
-track    : Blankenship
-audio    : https://p.scdn.co/mp3-preview/93ae971865b312f14d5b46b85fc75074d0daa1f3?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
-
-track    : Bent (Roi&#39;s Song)
-audio    : https://p.scdn.co/mp3-preview/8ea887c34718366fc52a240e413296c977c137e8?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
-
-track    : Out of Mind
-audio    : https://p.scdn.co/mp3-preview/ea0bc6d9faa45b80f401d102c68c6ea842d7fc4c?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
-
-track    : Skin Game
-audio    : https://p.scdn.co/mp3-preview/8440f0a173f55eac58895d63af59926f287be532?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2733bdae3719124f5f749feb9c5
-
-track    : Healthy Moon
-audio    : https://p.scdn.co/mp3-preview/7f94fe622dfc9905ec7fcb484d7146d6d7e1b855?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
-
-track    : Dopamine
-audio    : https://p.scdn.co/mp3-preview/51199b8280a45cfa8bb4187573bc1ed9b3f68696?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
-
-track    : Valentine
-audio    : https://p.scdn.co/mp3-preview/50402e3f9ddbbecc2b11712ab87e6520de324723?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2735172f44c5f8743c09fb5bbc8
-
-track    : How Long Have You Known
-audio    : https://p.scdn.co/mp3-preview/2c83a115b812651b196d275f949380cd922ced21?cid=ff47cd5371a049cb87c5c6bc407f4901
-cover art: https://i.scdn.co/image/ab67616d0000b2737bc6a0c2b8d9393a2dd80cb7
-
-</pre>
-</div>
 
 ## Extras
 
