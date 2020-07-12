@@ -518,6 +518,7 @@ Turns out I'm not that bad... I was expecting a much darker outcome :satisfied:
 ## Top Artists
 
 With the method `.current_user_top_artists()` you can retrieve your top artists and some info about them. Applying the same methods than before we get the following df:
+
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <style scoped>
@@ -665,7 +666,6 @@ With the method `.current_user_top_artists()` you can retrieve your top artists 
       <td>https://i.scdn.co/image/ab6772690000dd221d8c27...</td>
       <td>111959</td>
     </tr>
-    <tr>
       </tbody>
 </table>
 </div>
