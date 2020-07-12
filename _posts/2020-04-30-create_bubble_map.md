@@ -316,7 +316,6 @@ fig.show()
         </div>
 
 **Tip**: if you want to embed the map, follow theses steps:
-{: .notice--success}
 - Export the html to your local drive
 ```python
 with open('plotly_graph.html', 'w') as f:
@@ -324,6 +323,7 @@ with open('plotly_graph.html', 'w') as f:
 ```
 - Open the file as a .txt and copy the <div> section
 - Paste it in the code
+{: .notice--success}
 
 ## Concluding remarks
 I hope this tutorial come in handy to start improving your plots and presentations of your projects. And also to keep your mind busy while we wait for a vaccine to arrive :syringe:
