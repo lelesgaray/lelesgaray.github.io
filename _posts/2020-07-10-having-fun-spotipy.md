@@ -266,6 +266,33 @@ The median length of top tracks is 236.25 seconds -- 3.94 minutes
 </div>
 </div>
 
+#### What's the average popularity of the songs?
+
+```python
+# Average and median popularity of songs
+avg_popularity = round(np.mean(df['track_popularity']), 2)
+median_popularity = round(np.median(df['track_popularity']), 2)
+
+
+print('The average popularity of top tracks is ' + str(avg_popularity))
+print('The median popularity of top tracks is ' + str(median_popularity))
+```
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The average popularity of top tracks is 28.78
+The median popularity of top tracks is 32.0
+</pre>
+</div>
+</div>
+
+## Audio Features
+
+The audio features are characteristics that Spotify assigns to the songs. Some of them are really straightforward (tempo, loudness) and others not that much (instrumentalness). You can read more on the [API reference](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/)
+
 ## Extras
 
 - [Repo](https://github.com/lelesgaray/spotify) of the project.
