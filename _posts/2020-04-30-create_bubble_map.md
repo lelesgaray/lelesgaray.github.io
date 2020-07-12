@@ -9,6 +9,8 @@ tags:
   - Covid
   - Python
 classes: wide
+header: 
+  teaser: "/assets/images/bubble_map.png"
 ---
 
 Creating engaging plots is one useful skill to present data from your work. In this entry we will work with [Plotly](https://plotly.com/) library and information regarding Coronavirus spread, trying to emulate some of the [plots we are seeing these days.](https://coronavirus.jhu.edu/)
