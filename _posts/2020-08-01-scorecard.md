@@ -146,7 +146,7 @@ df.head()
 </table>
 </div>
 
-As we can see from the table there are quite a few missing for several variables. To continue, let's check the target variable balance.
+As we can see from the table there are quite a few missing for several variables. To continue, let's check the class balance of the target variable.
 <div class="output_html rendered_html output_subarea output_execute_result">
 <style  type="text/css" >
 </style><table id="T_8091084a_cde6_11ea_ace1_5cea1d47248e" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >BAD</th>        <th class="col_heading level0 col1" >count</th>        <th class="col_heading level0 col2" >percent</th>        <th class="col_heading level0 col3" >cumulative_count</th>        <th class="col_heading level0 col4" >cumulative_percent</th>    </tr></thead><tbody>
@@ -168,3 +168,12 @@ As we can see from the table there are quite a few missing for several variables
             </tr>
     </tbody></table>
 </div>
+
+We can check correlation with the target variable using a simple Heatmap.
+```python
+f, ax = plt.subplots(figsize=(8, 8))
+ax = sns.heatmap(df.corr(),
+            cmap = 'coolwarm', 
+            annot = True)
+```
+
