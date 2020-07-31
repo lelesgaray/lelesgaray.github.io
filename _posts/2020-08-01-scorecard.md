@@ -146,3 +146,25 @@ df.head()
 </table>
 </div>
 
+As we can see from the table there are quite a few missing for several variables. To continue, let's check the target variable balance.
+<div class="output_html rendered_html output_subarea output_execute_result">
+<style  type="text/css" >
+</style><table id="T_8091084a_cde6_11ea_ace1_5cea1d47248e" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >BAD</th>        <th class="col_heading level0 col1" >count</th>        <th class="col_heading level0 col2" >percent</th>        <th class="col_heading level0 col3" >cumulative_count</th>        <th class="col_heading level0 col4" >cumulative_percent</th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_8091084a_cde6_11ea_ace1_5cea1d47248elevel0_row0" class="row_heading level0 row0" >0</th>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow0_col0" class="data row0 col0" >0</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow0_col1" class="data row0 col1" >4,771</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow0_col2" class="data row0 col2" >80.05%</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow0_col3" class="data row0 col3" >4,771</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow0_col4" class="data row0 col4" >80.05%</td>
+            </tr>
+            <tr>
+                        <th id="T_8091084a_cde6_11ea_ace1_5cea1d47248elevel0_row1" class="row_heading level0 row1" >1</th>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow1_col0" class="data row1 col0" >1</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow1_col1" class="data row1 col1" >1,189</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow1_col2" class="data row1 col2" >19.95%</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow1_col3" class="data row1 col3" >5,960</td>
+                        <td id="T_8091084a_cde6_11ea_ace1_5cea1d47248erow1_col4" class="data row1 col4" >100.00%</td>
+            </tr>
+    </tbody></table>
+</div>
