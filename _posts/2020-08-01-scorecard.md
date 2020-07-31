@@ -176,4 +176,5 @@ ax = sns.heatmap(df.corr(),
             cmap = 'coolwarm', 
             annot = True)
 ```
+{% include figure image_path="assets/images/scorecard_heatmap.png" alt="this is a placeholder image" caption="" %}
 
