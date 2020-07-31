@@ -168,7 +168,7 @@ As we can see from the table there are quite a few missing for several variables
             </tr>
     </tbody></table>
 </div>
-
+<br>
 We can check correlation with the target variable using a simple Heatmap.
 ```python
 f, ax = plt.subplots(figsize=(8, 8))
