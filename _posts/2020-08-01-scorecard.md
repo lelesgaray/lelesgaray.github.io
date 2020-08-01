@@ -240,3 +240,7 @@ Notice that we are computing WOE = ln(good/bad), by changing the `positive` para
 {: .notice}
 
 {% include figure image_path="assets/images/woe_plot.png" alt="this is a placeholder image" caption="" %}
+.width-half {
+    width: 50%
+}
+![](assets/images/woe_plot.png){: .width-half}
