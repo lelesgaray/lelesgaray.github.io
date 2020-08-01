@@ -178,3 +178,59 @@ ax = sns.heatmap(df.corr(),
 ```
 {% include figure image_path="assets/images/scorecard_heatmap.png" alt="this is a placeholder image" caption="" %}
 
+## WOE transformation
+
+Next we will transform our variables into WOEs. To do that, we will use 2 python libraries: [scorecardpy](https://pypi.org/project/scorecardpy/) and [Monotonic WOE Binning](https://github.com/jstephenj14/Monotonic-WOE-Binning-Algorithm). The reason to use both packages is that, while the former will perform the whole sequence of transformation-estimation-performance analysis, the latter will assure the [monotonicity property of WOEs](https://en.wikipedia.org/wiki/Monotonic_function).
+
+Let's go ahead and import the libraries
+```python
+#!pip install scorecardpy
+#!pip install monotonic-binning
+import scorecardpy as sc
+from monotonic_binning.monotonic_woe_binning import Binning
+```
+#### Data Split and WOE computation of numeric variables
+We will define a function to compute numeric variables with the `monotonic_binning` package.
+```python
+# Perform a 70 / 30 split of data
+train, test = sc.split_df(df, 'BAD', ratio = 0.7, seed = 999).values()
+
+# Function to compute WOEs
+var = train.drop(['BAD', 'REASON', 'JOB'], axis = 1).columns
+y_var = train['BAD']
+
+def woe_num(x, y):
+  bin_object = Binning(y, n_threshold = 50, y_threshold = 10, p_threshold = 0.35, sign=False)
+  global breaks 
+  breaks = {}
+  for i in x:
+    bin_object.fit(train[[y, i]])
+    breaks[i] = (bin_object.bins[1:-1].tolist())
+  return breaks
+  
+woe_num(var, 'BAD')
+```
+This will return a dictionary that we will pass as argument to the `scorecard` package. But before that, we need to compute the WOEs for cathegorical variables.
+```python
+# Check categorical variables names
+bins = sc.woebin(train, y = 'BAD', x = ['JOB', 'REASON'], save_breaks_list = 'cat_breaks')
+# import dictionary
+from cat_breaks_20200724_164925 import breaks_list
+breaks_list
+
+# merge
+breaks.update(breaks_list)
+print(breaks)
+```
+#### WOE transformation
+Now it's time to use the dictionary of WOE-rules and apply them to the original variables in train/test.
+```python
+bins_adj = sc.woebin(df, 'BAD', breaks_list= breaks, positive = 'bad|0') # change positive to adjust WOE to ln(GOOD / BAD)
+# converting train and test into woe values
+train_woe = sc.woebin_ply(train, bins_adj)
+test_woe = sc.woebin_ply(test, bins_adj)
+
+# Merge by index
+train_final = train.merge(train_woe, how = 'left', left_index=True, right_index=True)
+test_final = test.merge(test_woe, how = 'left', left_index=True, right_index=True)
+```
