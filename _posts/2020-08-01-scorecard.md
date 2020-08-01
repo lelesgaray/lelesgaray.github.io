@@ -234,9 +234,12 @@ test_woe = sc.woebin_ply(test, bins_adj)
 train_final = train.merge(train_woe, how = 'left', left_index=True, right_index=True)
 test_final = test.merge(test_woe, how = 'left', left_index=True, right_index=True)
 ```
-Notice that we are computing WOE = ln(good/bad), by changing the `positive` parameter of the `woebin` function. And now we are all set to estimate a model. Take into account that we need to fill the missing values if we decide to keep the original variables (as well as the transformed ones).
+And now we are all set to estimate a model!
+**NOTE:** Some useful tips
+- Notice that we are computing WOE = ln(good/bad), by changing the `positive` parameter of the `woebin` function. 
+- Take into account that we need to fill the missing values if we decide to keep the original variables (as well as the transformed ones).
 <br>
-**NOTE:** You can manually adjust the cut-offs by calling the `woebin_adj` method, and you can visually inspect the new variables with `woebin_plot`. An example of this plot is presented below.
+- You can manually adjust the cut-offs by calling the `woebin_adj` method, and you can visually inspect the new variables with `woebin_plot`. An example of this plot is presented below.
 {: .notice}
 
 {% include figure image_path="assets/images/woe_plot.png" alt="this is a placeholder image" caption="" %}
