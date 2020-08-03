@@ -185,7 +185,7 @@ ax = sns.heatmap(df.corr(),
 }
 </style>
 <div class="centerImage">
-<img src="assets/images/scorecard_heatmap.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
+<img src="/assets/images/scorecard_heatmap.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
 </div>
 
 ## WOE transformation
