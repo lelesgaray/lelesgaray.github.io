@@ -243,5 +243,7 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
 
 
 <figure>
+<center>
   <img src="/assets/images/woe_plot.png" alt="this is a placeholder image" class="center" style="width: 50%; height: 50%"/>
+  </center>
 </figure>
