@@ -241,9 +241,14 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
 - You can manually adjust the cut-offs by calling the `woebin_adj` method, and you can visually inspect the new variables with `woebin_plot`. An example of this plot is presented below.
 {: .notice}
 
+<style type="text/css">
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+</style>
 
 <figure>
-<center>
-  <img src="/assets/images/woe_plot.png" alt="this is a placeholder image" class="center" style="width: 50%; height: 50%"/>
-  </center>
+  <img src="/assets/images/woe_plot.png" alt="this is a placeholder image" class="centerImage style="width: 50%; height: 50%"/>
 </figure>
