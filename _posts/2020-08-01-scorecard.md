@@ -300,3 +300,25 @@ test_perf = sc.perf_eva(y_test, test_pred, title = "test")
 ```
 
 {% include gallery id="gallery" caption="Performance Scores Train / Test" %}
+
+```python
+print(classification_report(y_test,predictions))
+```
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>              precision    recall  f1-score   support
+
+           0       0.92      0.96      0.94      1431
+           1       0.79      0.66      0.72       357
+
+    accuracy                           0.90      1788
+   macro avg       0.85      0.81      0.83      1788
+weighted avg       0.89      0.90      0.89      1788
+
+</pre>
+</div>
+</div>
