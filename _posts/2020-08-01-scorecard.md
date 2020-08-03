@@ -248,6 +248,6 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
  display:block;
 }
 </style>
-<div class="img-container">
+<div class="centerImage">
 <img src="/assets/images/woe_plot.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
 </div
