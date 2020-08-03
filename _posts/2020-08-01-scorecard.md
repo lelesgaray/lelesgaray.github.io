@@ -14,8 +14,8 @@ gallery:
   - url: /assets/images/scorecar_perf_1.png
     image_path: /assets/images/scorecar_perf_1.png
     alt: "Performance 1"
-  - url: /assets/images/scorecar_perf_2.png
-    image_path: /assets/images/scorecar_perf_2.png
+  - url: /assets/images/scorecard_perf_2.png
+    image_path: /assets/images/scorecard_perf_2.png
     alt: "Performance 2"
 ---
 
