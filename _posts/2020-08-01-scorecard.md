@@ -322,3 +322,22 @@ weighted avg       0.89      0.90      0.89      1788
 </pre>
 </div>
 </div>
+
+```python
+conf_log2 = confusion_matrix(y_test,predictions)
+sns.heatmap(data=conf_log2, annot=True, linewidth=0.7, linecolor='k', fmt='.0f', cmap='magma')
+plt.xlabel('Predicted Values')
+plt.ylabel('True Values')
+plt.title('Confusion Matrix - Logistic Regression');
+```
+
+<style>
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+</style>
+<div class="centerImage">
+<img src="/assets/images/scoreacard_conf_matrix.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
+</div>
