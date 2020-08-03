@@ -242,5 +242,5 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
 {: .notice}
 
 
-<img src="assets/images/woe_plot.png" width="50%" height="50%"><br>
+<img src="https://github.com/lelesgaray/lelesgaray.github.io/blob/master/assets/images/woe_plot.png" width="50%" height="50%"><br>
 
