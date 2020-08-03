@@ -176,7 +176,17 @@ ax = sns.heatmap(df.corr(),
             cmap = 'coolwarm', 
             annot = True)
 ```
-{% include figure image_path="assets/images/scorecard_heatmap.png" alt="this is a placeholder image" caption="" %}
+
+<style>
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+</style>
+<div class="centerImage">
+<img src="assets/images/scorecard_heatmap.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
+</div>
 
 ## WOE transformation
 
