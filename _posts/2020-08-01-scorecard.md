@@ -243,5 +243,5 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
 
 
 <figure>
-  <img src="/assets/images/unsplash-image-10.jpg" alt="this is a placeholder image" width="50%">
+  <img src="/assets/images/woe_plot.png" alt="this is a placeholder image" width="50%">
 </figure>
