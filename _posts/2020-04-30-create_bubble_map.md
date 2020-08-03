@@ -315,7 +315,7 @@ fig.show()
             </script>
         </div>
 
-**Tip**: if you want to embed the map, follow theses steps:
+**Tip**: if you want to embed the map, follow these steps:
 - Export the html to your local drive
 ```python
 with open('plotly_graph.html', 'w') as f:
