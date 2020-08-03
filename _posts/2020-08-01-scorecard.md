@@ -10,6 +10,13 @@ tags:
 classes: wide
 header: 
   teaser: "/assets/images/credit_score.jpg"
+gallery:
+  - url: /assets/images/scorecar_perf_1.png
+    image_path: /assets/images/scorecar_perf_1.png
+    alt: "Performance 1"
+  - url: /assets/images/scorecar_perf_2.png
+    image_path: /assets/images/scorecar_perf_2.png
+    alt: "Performance 2"
 ---
 
 The company I work for is updating the modelling process and migrating all the scripts to Python and R. Given that a broad portion of the credit models deployed involve a binary classification, there is a need to transform variables to compute their Weight of Evidence (WOE). During my research I couldn't find a widely-adopted framework to do the whole model from scratch, so I decided to use different tools to create one. In this post I will review some of the advantages and pitfalls I encountered during the process.
@@ -261,3 +268,35 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
 <div class="centerImage">
 <img src="/assets/images/woe_plot.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
 </div>
+
+## Logistic Regression
+
+#### 1. Data split and model fit
+
+```python
+# Data split
+y_train = train_final.loc[:,'vd']
+X_train = train_final.loc[:,train_final.columns != 'vd']
+y_test = test_final.loc[:,'vd']
+X_test = test_final.loc[:,train_final.columns != 'vd']
+
+# LR fit
+# logistic regression ------
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression(penalty = 'l1', C= 0.9)
+lr.fit(X_train, y_train)
+print(lr.coef_)
+```
+
+#### 2. Performance
+```python
+# predicted proability
+train_pred = lr.predict_proba(X_train)[:,1]
+test_pred = lr.predict_proba(X_test)[:,1]
+
+# performance ks & roc ------
+train_perf = sc.perf_eva(y_train, train_pred, title = "train")
+test_perf = sc.perf_eva(y_test, test_pred, title = "test")
+```
+
+{% include gallery id="gallery" caption="Performance Scores Train / Test" %}
