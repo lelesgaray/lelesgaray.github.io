@@ -272,7 +272,7 @@ And now we are all set to estimate a model! Before that, some useful tips:<br>
 ## Logistic Regression
 
 #### 1. Data split and model fit
-
+Let's fit a Logistic Regression for the database we constructed.
 ```python
 # Data split
 y_train = train_final.loc[:,'vd']
@@ -289,6 +289,7 @@ print(lr.coef_)
 ```
 
 #### 2. Performance
+The `scorecard` package has some in-built methods to analyze performance
 ```python
 # predicted proability
 train_pred = lr.predict_proba(X_train)[:,1]
@@ -308,6 +309,7 @@ print(classification_report(y_test,predictions))
 
     <div class="prompt"></div>
 
+Finally we can check Precision, Recall and the Confusion Matrix
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>              precision    recall  f1-score   support
@@ -341,3 +343,10 @@ plt.title('Confusion Matrix - Logistic Regression');
 <div class="centerImage">
 <img src="/assets/images/scoreacard_conf_matrix.png" alt="this is a placeholder image" style="width: 50%; height: 50%"/>
 </div>
+
+## Wrap up
+This entry presented an easy way to calculate WOEs and fit a simple model for Finance and Credit analysis. I'm aware that there are many steps missing from the analysis (variables selection by IV, hyperparameters tuning, among others) but I wanted to focus on the main steps to increase performance by transforming variables to WOEs. If you have a better way to deal with these issues, or you've been implementing a better solution, please contact me so that I can learn from your progress.
+
+## Extras
+- [Jupyter notebook](https://github.com/lelesgaray/scorecard) of the project.
+- An [open repo](https://github.com/Sundar0989/WOE-and-IV) that deals with WOE transformation through a series of functions.
