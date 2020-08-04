@@ -345,7 +345,7 @@ plt.title('Confusion Matrix - Logistic Regression');
 </div>
 
 ## Wrap up
-This entry presented an easy way to calculate WOEs and fit a simple model for Finance and Credit analysis. I'm aware that there are many steps missing from the analysis (variables selection by IV, hyperparameters tuning, among others) but I wanted to focus on the main steps to increase performance by transforming variables to WOEs. If you have a better way to deal with these issues, or you've been implementing a better solution, please contact me so that I can learn from your progress.
+This entry presented an easy way to calculate WOEs and fit a simple model for Finance and Credit analysis. I'm aware that there are many things missing from the analysis (variables selection by IV, hyperparameters tuning, among others) but I wanted to focus only on the key steps to increase performance by transforming variables to WOEs. If you have a better way to deal with these issues, or you've been implementing a better solution, please contact me so that I can learn from your progress.
 
 ## Extras
 - [Jupyter notebook](https://github.com/lelesgaray/scorecard) of the project.
